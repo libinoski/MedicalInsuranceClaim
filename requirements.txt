@@ -30,7 +30,7 @@ pytz
 seaborn
 scipy
 six
-scikit-learn==0.24.2  
+scikit-learn
 traitlets
 wcwidth
 Werkzeug
