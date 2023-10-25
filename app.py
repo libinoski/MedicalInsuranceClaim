@@ -14,14 +14,18 @@ def hello_world():
 
 @app.route('/predict', methods=['POST', 'GET'])
 def predict():
-    features = [int(x) for x in request.form.values()]
-    final = np.array(features).reshape((1, 6))
-    pred = model.predict(final)[0]
-    
-    if pred < 0:
-        return render_template('op.html', pred='Error calculating Amount!')
+    if request.method == 'POST':
+        features = [int(x) for x in request.form.values()]
+        final = np.array(features).reshape((1, 6))
+        pred = model.predict(final)[0]
+        
+        if pred < 0:
+            return render_template('op.html', pred='Error calculating Amount!')
+        else:
+            return render_template('op.html', pred=f'₹ {pred:.3f}')
     else:
-        return render_template('op.html', pred=f'₹ {pred:.3f}')
+        # Handle GET requests to '/predict' (e.g., page reload)
+        return render_template('home.html')  # You can return a different template or response as needed
 
 # Define the "about" route
 @app.route('/about')
