@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predicted Insurance Amount</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/materialize.css">
+    <style>
+        body {
+            background: #d8bfd8; /* Light purple background color outside the box */
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .section-box {
+            background-color: #add8e6; /* Light blue background color inside the box */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        .container {
+            text-align: center;
+            color: #333;
+        }
+
+        .output-box {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #FF0000; /* Red button color */
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #FF3333; /* Darker red on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section-box">
+        <div class="container">
+            <h1>Predicted Insurance Amount</h1>
+            <!-- Output box -->
+            <div class="output-box">{{pred}}</div>
+            <div class="button-container">
+                <a class="button" href="/">HOME</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Cost Prediction</title>
+
+  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+
+    .input-field label {
+      font-weight: bold;
+      color: #1976D2; /* Blue color for labels */
+    }
+
+    .header {
+      font-family: 'Roboto', sans-serif;
+      color: #d32f2f; /* Red color for header text */
+    }
+
+    .btn-large {
+      background-color: #1976D2;
+      font-weight: bold;
+      color: #000; 
+    }
+
+    .footer {
+      background-color: #1976D2;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #90CAF9; /* Light blue color for links in the footer */
+    }
+
+    .footer h5 {
+      font-size: 24px;
+    }
+
+    .footer p {
+      font-size: 16px;
+    }
+
+    /* Custom Text Colors for Input Fields */
+    .input-field label[for="age"] {
+      color: #FF5722; /* Red-Orange color for age */
+    }
+
+    .input-field label[for="children"] {
+      color: #FF9800; /* Orange color for children */
+    }
+
+    .input-field label[for="Gender"] {
+      color: #9C27B0; /* Purple color for Gender */
+    }
+
+    .input-field label[for="bmi"] {
+      color: #4CAF50; /* Green color for BMI */
+    }
+
+    .input-field label[for="smoker"] {
+      color: #FFC107; /* Yellow color for smoker */
+    }
+
+    .input-field label[for="region"] {
+      color: #E91E63; /* Pink color for region */
+    }
+  </style>
+</head>
+<body>
+  <nav class="purple darken-4 accent-3" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">MEDICAL INSURANCE COST PREDICTION</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/about" class="waves-effect waves-light btn purple">ABOUT THIS PROJECT</a></li>
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="/about" class="waves-effect waves-light btn purple">ABOUT THIS PROJECT</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class "container">
+      <br><br>
+      <div class="row center">
+        <h5 class="header col s12 light black-text">Predict the cost for your Medical Insurance!</h5>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <form action="/predict" method="post" class="col s12" onsubmit="return validateForm();">
+            <div class="row">
+              <div class="input-field col s6">
+                <label for="age" style="font-size: 20px"><b>YOUR AGE</b></label>
+                <input placeholder="Enter your age" name="age" id="age" type="number" class="validate" required>
+              </div>
+              <div class="input-field col s6">
+                <label for="children" style="font-size: 20px"><b>NUMBER OF CHILDREN</b></label>
+                <input id="children" name="children" placeholder="Enter the number of children" type="number" class="validate" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <label for="Gender" style="font-size: 20px"><b>GENDER</b></label>
+                <input id="Gender" name="Gender" placeholder="0 for Male, 1 for Female" type="number" class="validate" required>
+              </div>
+              <div class="input-field col s6">
+                <label for="bmi" style="font-size: 20px"><b>BMI</b></label>
+                <input id="bmi" name="bmi" placeholder="Enter your BMI" type="number" class="validate" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+                <label for "smoker" style="font-size: 20px"><b>DO YOU SMOKE?</b></label>
+                <input id="smoker" name="smoker" placeholder="1 for Yes, 0 for No" type="number" class="validate" required>
+              </div>
+              <div class="input-field col s6">
+                <label for="region" style="font-size: 20px"><b>YOUR REGION?</b></label>
+                <input id="region" name="region" placeholder="0-NW, 1-NE, 2-SE, 3-SW" type="number" class="validate" required>
+              </div>
+            </div>
+            <div class="row center">
+              <button type="submit" class="btn-large waves-effect waves-light amber lighten-1">PREDICT THE AMOUNT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with enhanced styling -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h5>DEVELOPER DETAILS</h5>
+          <p>
+            Name: <strong>Libin Jacob</strong><br>
+            Email: <strong>libinakaoski@gmail.com</strong>
+          </p>
+        </div>
+        <div class="col s12 m6">
+          <h5>CONNECT WITH ME</h5>
+          <p>
+            Check out my GitHub profile:
+            <a href="https://github.com/libinoski" target="_blank"><i class="fab fa-github"></i> GitHub</a><br>
+            Follow me on Instagram:
+            <a href="https://www.instagram.com/libinoski/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End of the footer -->
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
