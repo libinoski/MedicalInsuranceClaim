@@ -28,7 +28,6 @@ pyparsing
 python-dateutil
 pytz
 seaborn
-sklearn
 scipy
 six
 scikit-learn
